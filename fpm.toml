@@ -9,6 +9,7 @@ homepage = "https://github.com/jacobwilliams/minnorm_test"
 auto-executables = true
 auto-examples = true
 auto-tests = true
+external-modules = "dqrm_mod"
 
 [dependencies]
 json-fortran = { git = "https://github.com/jacobwilliams/json-fortran", tag = "8.2.5" }

@@ -13,11 +13,11 @@ conda activate ./env
 set up (windows) env:
 
 ```
-run.bat
+setup.bat
 ```
 
 run a test:
 
 ```
-fpm build --compiler ifort --flag "-fpp"
+fpm run --compiler ifort --profile release --flag "/fpp /Qmkl:sequential"
 ```
