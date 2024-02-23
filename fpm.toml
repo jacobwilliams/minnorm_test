@@ -1,0 +1,20 @@
+name = "minnorm_test"
+author = "Jacob Williams"
+copyright  = "Copyright (c) 2024, Jacob Williams"
+license = "BSD-3"
+description = "minnorm_test"
+homepage = "https://github.com/jacobwilliams/minnorm_test"
+
+[build]
+auto-executables = true
+auto-examples = true
+auto-tests = true
+
+[dependencies]
+json-fortran = { git = "https://github.com/jacobwilliams/json-fortran", tag = "8.2.5" }
+
+[library]
+source-dir = "src"
+
+[install]
+library = true
