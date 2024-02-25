@@ -126,41 +126,41 @@ module minnorm_module
 
     end subroutine solve_with_lapack
 
-    ! subroutine solve_with_qrm()
+    subroutine solve_with_qrm()
 
-    !     !! solve with qr_mumps. TOTALLY UNTESTED!
+        !! solve with qr_mumps. TOTALLY UNTESTED!
 
-    !     use dqrm_mod
+        use dqrm_mod
 
-    !     type(dqrm_spmat_type) :: qrm_spmat
-    !     real(wp),dimension(:),allocatable :: x2
-    !     integer(int64) :: count_rate, count_start, count_end
+        type(dqrm_spmat_type) :: qrm_spmat
+        real(wp),dimension(:),allocatable :: x2
+        integer(int64) :: count_rate, count_start, count_end
 
-    !     write(*,*) 'solve_with_qrm'
+        write(*,*) 'solve_with_qrm'
 
-    !     allocate(x2(size(x)))
+        allocate(x2(size(x)))
 
-    !     call system_clock(count_rate=count_rate)
-    !     call system_clock(count=count_start)
+        call system_clock(count_rate=count_rate)
+        call system_clock(count=count_start)
 
-    !     call qrm_init()
+        call qrm_init()
 
-    !     ! initialize the matrix data structure.
-    !     call qrm_spmat_init(qrm_spmat)
+        ! initialize the matrix data structure.
+        call qrm_spmat_init(qrm_spmat)
 
-    !     qrm_spmat%m   =  m
-    !     qrm_spmat%n   =  n
-    !     qrm_spmat%nz  =  n_nonzeros
-    !     qrm_spmat%irn => irow
-    !     qrm_spmat%jcn => icol
-    !     qrm_spmat%val => a
+        qrm_spmat%m   =  m
+        qrm_spmat%n   =  n
+        qrm_spmat%nz  =  n_nonzeros
+        qrm_spmat%irn => irow
+        qrm_spmat%jcn => icol
+        qrm_spmat%val => a
 
-    !     call qrm_spmat_gels(qrm_spmat, b, x2)
+        call qrm_spmat_gels(qrm_spmat, b, x2)
 
-    !     call system_clock(count=count_end)
-    !     write(*,*) 'error: ', norm2(x-x2)
-    !     write(*,*) 'time: ', (count_end-count_start)/real(count_rate, wp), 'sec'
+        call system_clock(count=count_end)
+        write(*,*) 'error: ', norm2(x-x2)
+        write(*,*) 'time: ', (count_end-count_start)/real(count_rate, wp), 'sec'
 
-    ! end subroutine solve_with_qrm
+    end subroutine solve_with_qrm
 
 end module minnorm_module
