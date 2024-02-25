@@ -1,7 +1,12 @@
-# minnorm_test
-Example large m x n matrix (m&lt;n) for testing minimum norm linear solvers
+Example large `m` x `n` matrix (`m < n`) for testing minimum norm linear solvers
 
-### notes
+Require FPM.
+
+Example: `fpm run --profile release --flag "-lblas -llapack"`
+
+
+
+### Windows notes
 
 create a conda env:
 

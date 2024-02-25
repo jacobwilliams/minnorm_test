@@ -109,15 +109,13 @@ module minnorm_module
         call system_clock(count_rate=count_rate)
         call system_clock(count=count_start)
 
-        ! call linear_solver(m,n,a_dense,b,x2,info)
-
         allocate(bmat(max(1,m,n),1))
         bmat = 0.0_wp
         bmat(1:m,1) = b
         lwork = min(m,n)+max(1,m,n)
         allocate(work(lwork))
-        write(*,*) 'call dgels'
 
+        write(*,*) 'call dgels'
         call dgels('N', m, n, 1, a_dense, m, bmat, max(1,m,n), work, lwork, info)
         x2 = bmat(1:n,1)
 
@@ -129,6 +127,8 @@ module minnorm_module
     end subroutine solve_with_lapack
 
     ! subroutine solve_with_qrm()
+
+    !     !! solve with qr_mumps. TOTALLY UNTESTED!
 
     !     use dqrm_mod
 
